@@ -14,38 +14,29 @@ export const PastWorkSlide = styled.div`
   height: 100%;
   margin: 0;
   padding: 10px;
-  border: 2px solid transparent;
-  transition: border 1s ease-in-out;
+  /* border: 2px solid transparent; */
+  /* transition: border 1s ease-in-out; */
 
-  &:hover {
+  /* &:hover {
     border: 2px solid #5e0b86;
     border-radius: 4px 0;
-  }
+  } */
 
   p {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.875em;
+    line-height: 1.2em;
     text-align: left;
-  }
-
-  @media screen and (min-width: 768px) {
   }
 `;
 
 export const PastWorkLogo = styled.div`
-  display: none;
-
   & img {
     display: block;
     height: auto;
     width: 80px;
     margin: 12px auto;
-  }
-
-  &:hover {
-    border: 2px solid #5e0b86;
   }
 
   @media screen and (min-width: 768px) {
@@ -64,6 +55,7 @@ export const PastWorkWrapper = styled.div`
   flex-wrap: wrap;
   width: 100%;
   margin: 20px auto;
+  gap: 10px;
   justify-content: space-evenly;
 
   @media screen and (min-width: 768px) {

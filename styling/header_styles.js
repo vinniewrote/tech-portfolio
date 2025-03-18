@@ -23,7 +23,7 @@ export const MastHeadGroup = styled.div`
   margin: 0 auto;
   padding: 0;
 
-  & img.lionLogo {
+  & a img.lionLogo {
     height: auto;
     width: 65px;
     margin: 0 auto 10px;
@@ -41,4 +41,10 @@ export const MastHeadGroup = styled.div`
       margin: 0 auto;
     }
   }
+`;
+
+export const MainImageWrapper = styled.div`
+  width: 65px;
+  height: auto;
+  margin: 0 auto;
 `;

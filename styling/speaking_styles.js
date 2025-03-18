@@ -39,7 +39,8 @@ export const ConferenceCardContainer = styled.div`
 `;
 
 export const ConferenceCard = styled.div`
-  width: 240px;
+  width: 80%;
+  margin: 0.75em auto;
   border: 2px solid #c29f00;
   border-radius: 6px 6px 4px 4px;
   background-color: transparent;
@@ -47,17 +48,27 @@ export const ConferenceCard = styled.div`
   padding: 0;
   transition: border 0.75s ease;
   flex-grow: 1;
+  & a {
+    text-decoration: none;
+  }
+  & a h4 {
+    color: #ffffff;
+  }
+  & a h5 {
+    color: #c29f00;
+  }
   &:hover {
     border: 2px solid #5e0b86;
     cursor: pointer;
     & h3 {
       color: #ffffff;
+      border-bottom: 2px solid #5e0b86;
     }
-    & h5 a {
-      color: #5e0b86;
-    }
-    & h4 {
+    & a h4 {
       color: #c29f00;
+    }
+    & a h5 {
+      color: #ffffff;
     }
   }
 
@@ -67,11 +78,11 @@ export const ConferenceCard = styled.div`
     & h3 {
       color: #ffffff;
     }
-    & h5 a {
-      color: rgba(194, 159, 0, 0.5);
-    }
-    & h4 {
+    & a h4 {
       color: #3a0951;
+    }
+    & a h5 {
+      color: rgba(194, 159, 0, 0.5);
     }
   }
 
@@ -79,10 +90,12 @@ export const ConferenceCard = styled.div`
     font-family: "Inconsolata", sans-serif;
     font-size: 18px;
     font-weight: 700;
-    background-color: rgba(51, 51, 51, 1);
+    background-color: #5e0b86;
     text-align: left;
     padding: 0 10px;
     transition: color 0.75s ease;
+    border-bottom: 2px solid #c29f00;
+    transition: border 0.75s ease;
   }
 
   & h4 {
@@ -97,32 +110,25 @@ export const ConferenceCard = styled.div`
 
   & h5 {
     font-family: "Roboto Slab", serif;
-    font-weight: 300;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 1em;
     line-height: 18px;
     text-align: center;
     margin: 0 0 20px 0;
     padding: 0 10px;
     transition: color 0.75s ease;
-    & a {
-      text-decoration: none;
-    }
-  }
-
-  & a {
-    color: #c29f00;
   }
 
   @media screen and (max-width: 768px) {
-    width: 180px;
+    /* width: 180px;
     margin: 0.75em auto;
-    padding: 0;
-    & h4 {
+    padding: 0; */
+    /* & h4 {
       font-size: 18px;
     }
     & h5 {
       font-size: 12px;
-    }
+    } */
   }
 
   @media screen and (max-width: 576px) {

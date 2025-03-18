@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 import {
   PortfolioBlock,
   PortfolioContainer,
@@ -8,27 +10,27 @@ import {
   PortfolioInverseWrapper,
   CopyWrapper,
   CarouselWrapper,
-} from "../styles/portfolioDetail_styles";
+} from "../styling/portfolioDetail_styles";
 import { Carousel } from "react-responsive-carousel";
-import problem from "../images/problem_icon.svg";
-import shopByBrand_mobile_homepage_solution from "../images/shopByBrand_mobile_homepage_solution.png";
-import shopByBrand_mobile_search_solution from "../images/shopByBrand_mobile_search_solution.png";
-import shopByBrand_mobile_sidebar_solution from "../images/shopByBrand_mobile_sidebar_solution.png";
-import shopByBrand_tablet_homepage_solution from "../images/shopByBrand_tablet_homepage_solution.png";
-import shopByBrand_tablet_nav_solution from "../images/shopByBrand_tablet_nav_solution.png";
-import shopByBrand_tablet_search_solution from "../images/shopByBrand_tablet_search_solution.png";
-import shopByBrand_desktop_gatingpage_outcome from "../images/shopByBrand_desktop_gatingpage_outcome.png";
-import shopByBrand_mobile_gatingpage_outcome from "../images/shopByBrand_mobile_gatingpage_outcome.png";
-import shopByBrand_tablet_gatingpage_outcome from "../images/shopByBrand_tablet_gatingpage_outcome.png";
-import sbp_outcome_desktop from "../images/ShopByBrand_outcome_desktop.svg";
-import sbp_outcome_tablet from "../images/ShopByBrand_outcome_iPad.svg";
-import sbp_outcome_mobile from "../images/ShopByBrand_outcome_mobile.svg";
-import sbp_solution_mobile_home from "../images/sbp_solution_mobile_home.svg";
-import sbp_solution_mobile_nav from "../images/sbp_solution_mobile_nav_sidebar.svg";
-import sbp_solution_mobile_search from "../images/sbp_solution_mobile_search.svg";
-import sbp_solution_desktop_search from "../images/sbp_solution_desktop_search.svg";
-import sbp_solution_tablet_search from "../images/sbp_solution_tablet_search.svg";
-import sbp_solution_tablet_home from "../images/sbp_solution_tablet_home.svg";
+import problem from "../public/images/problem_icon.svg";
+// import shopByBrand_mobile_homepage_solution from "../images/shopByBrand_mobile_homepage_solution.png";
+// import shopByBrand_mobile_search_solution from "../images/shopByBrand_mobile_search_solution.png";
+// import shopByBrand_mobile_sidebar_solution from "../images/shopByBrand_mobile_sidebar_solution.png";
+// import shopByBrand_tablet_homepage_solution from "../images/shopByBrand_tablet_homepage_solution.png";
+// import shopByBrand_tablet_nav_solution from "../images/shopByBrand_tablet_nav_solution.png";
+// import shopByBrand_tablet_search_solution from "../images/shopByBrand_tablet_search_solution.png";
+// import shopByBrand_desktop_gatingpage_outcome from "../images/shopByBrand_desktop_gatingpage_outcome.png";
+// import shopByBrand_mobile_gatingpage_outcome from "../images/shopByBrand_mobile_gatingpage_outcome.png";
+// import shopByBrand_tablet_gatingpage_outcome from "../images/shopByBrand_tablet_gatingpage_outcome.png";
+import sbp_outcome_desktop from "../public/images/ShopByBrand_outcome_desktop.svg";
+import sbp_outcome_tablet from "../public/images/ShopByBrand_outcome_iPad.svg";
+import sbp_outcome_mobile from "../public/images/ShopByBrand_outcome_mobile.svg";
+import sbp_solution_mobile_home from "../public/images/sbp_solution_mobile_home.svg";
+import sbp_solution_mobile_nav from "../public/images/sbp_solution_mobile_nav_sidebar.svg";
+import sbp_solution_mobile_search from "../public/images/sbp_solution_mobile_search.svg";
+import sbp_solution_desktop_search from "../public/images/sbp_solution_desktop_search.svg";
+import sbp_solution_tablet_search from "../public/images/sbp_solution_tablet_search.svg";
+import sbp_solution_tablet_home from "../public/images/sbp_solution_tablet_home.svg";
 
 export default function ShopByBrand() {
   const arrowStyles = {
@@ -66,7 +68,7 @@ export default function ShopByBrand() {
           </PortfolioCopyBlock>
           <PortfolioImageBlock>
             <div>
-              <img src={problem} alt="problem" />
+              <Image src={problem} width={50} height={50} alt="problem" />
             </div>
           </PortfolioImageBlock>
         </PortfolioWrapper>
@@ -162,7 +164,13 @@ export default function ShopByBrand() {
                 }}
               >
                 <div>
-                  <img src={sbp_solution_desktop_search} />
+                  {/* <img src={sbp_solution_desktop_search} /> */}
+                  <Image
+                    src={sbp_solution_desktop_search}
+                    width={100}
+                    height={100}
+                    alt="problem"
+                  />
                   {/* <p className="legend">Legend 1</p> */}
                 </div>
                 <div>

@@ -1,10 +1,4 @@
 import React from "react";
-// import rating_1 from "../images/rating_1.svg";
-// import rating_2 from "../images/rating_2.svg";
-// import rating_3 from "../images/rating_3.svg";
-// import rating_4 from "../images/rating_4.svg";
-// import rating_5 from "../images/rating_5.svg";
-import download from "../public/images/download_icon.svg";
 import DownloadIcon from "../public/images/DownloadIcon";
 import { jobDetails } from "../data/resume-details";
 import { consultingDetails } from "../data/resume-consulting";
@@ -69,10 +63,10 @@ export default function Resume() {
           href="https://www.dropbox.com/scl/fi/1orkqmx5r22gqnfmdb8o8/efriendly-Vizente-Freeman-v11.pdf?rlkey=66bka9lp2837n5avfn5p3xvtz&dl=0"
           target="_blank"
         >
-          <ResumeButton>
+          {/* <ResumeButton>
             <DownloadIcon />
             <span>PDF</span>
-          </ResumeButton>
+          </ResumeButton> */}
         </ResumeLink>
       </FlexHeader>
 
@@ -83,7 +77,7 @@ export default function Resume() {
             <SoftSkillsWrapper>
               {softSkillsDetails?.softSkillBucket?.length > 0 &&
                 softSkillsDetails.softSkillBucket.map((softskl, i) => (
-                  <SoftSkills>{softskl.softSkill}</SoftSkills>
+                  <SoftSkills key={i}>{softskl.softSkill}</SoftSkills>
                 ))}
             </SoftSkillsWrapper>
           </SkillsetWrapper>
@@ -94,19 +88,21 @@ export default function Resume() {
           </ExperienceTitle>
           <ConsultingSkillsWrapper>
             {consultingDetails?.jobStops?.length > 0 &&
-              consultingDetails.jobStops.map((cjob, i) => (
-                <ExperienceTechBlock>
+              consultingDetails.jobStops.map((cjob, j) => (
+                <ExperienceTechBlock key={j}>
                   <JobExperienceWrapper>
+                    <JobTitle>{cjob.jobTitle}</JobTitle>
                     <CompanyBlock>
-                      <CompanyName>{cjob.companyName}</CompanyName>
+                      <CompanyName>{cjob.companyName}&nbsp;&nbsp;|</CompanyName>
+                      <JobTimeRange>
+                        {cjob.jobTimeRange}&nbsp;&nbsp;|
+                      </JobTimeRange>
                       <CompanyLocation>{cjob.companyLocation}</CompanyLocation>
-                      <JobTitle>{cjob.jobTitle}</JobTitle>
                     </CompanyBlock>
-                    {/* <CompanySummary>{job.companySummary}</CompanySummary> */}
-                    <JobTimeRange>{cjob.jobTimeRange}</JobTimeRange>
+
                     <JobDescription>
-                      {cjob.jobDescription.map((descripts, i) => (
-                        <li>{descripts.jobStopBullet}</li>
+                      {cjob.jobDescription.map((descripts, k) => (
+                        <li key={k}>{descripts.jobStopBullet}</li>
                       ))}
                     </JobDescription>
                   </JobExperienceWrapper>
@@ -127,29 +123,27 @@ export default function Resume() {
             </ExperienceTitle>
           </ExperienceTitleWrapper>
           {jobDetails?.jobStops?.length > 0 &&
-            jobDetails.jobStops.map((job, i) => (
-              <ExperienceTechBlock>
+            jobDetails.jobStops.map((job, m) => (
+              <ExperienceTechBlock key={m}>
                 <JobExperienceWrapper>
+                  <JobTitle>{job.jobTitle}</JobTitle>
                   <CompanyBlock>
-                    <CompanyName>{job.companyName}</CompanyName>
+                    <CompanyName>{job.companyName}&nbsp;|</CompanyName>
+                    <JobTimeRange>{job.jobTimeRange}&nbsp;|</JobTimeRange>
                     <CompanyLocation>{job.companyLocation}</CompanyLocation>
-                    <JobTitle>{job.jobTitle}</JobTitle>
                   </CompanyBlock>
-                  <CompanySummary>
-                    <em>{job.companySummary}</em>
-                  </CompanySummary>
-                  <JobTimeRange>{job.jobTimeRange}</JobTimeRange>
+                  <CompanySummary>{job.companySummary}</CompanySummary>
                   <JobDescription>
-                    {job.jobDescription.map((descripts, i) => (
-                      <li>{descripts.jobStopBullet}</li>
+                    {job.jobDescription.map((descripts, q) => (
+                      <li key={q}>{descripts.jobStopBullet}</li>
                     ))}
                   </JobDescription>
                 </JobExperienceWrapper>
                 <JobTechWrapper>
                   <TechTitleCopy>Technologies</TechTitleCopy>
                   <ul>
-                    {job.jobTechnologies.map((techscripts, i) => (
-                      <li>{techscripts.jobStopTech}</li>
+                    {job.jobTechnologies.map((techscripts, p) => (
+                      <li key={p}>{techscripts.jobStopTech}</li>
                     ))}
                   </ul>
                 </JobTechWrapper>
