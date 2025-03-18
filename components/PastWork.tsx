@@ -2,11 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  PastWorkButton,
   PastWorkSlide,
   PastWorkLogo,
   PastWorkBlock,
-  CaseStudyLink,
   PastWorkWrapper,
 } from "../styling/pastWork_styles";
 import foxtrot from "../public/images/foxtrot-portfolio-logo.svg";

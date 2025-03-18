@@ -1,27 +1,16 @@
 import React from "react";
-import DownloadIcon from "../public/images/DownloadIcon";
 import { jobDetails } from "../data/resume-details";
 import { consultingDetails } from "../data/resume-consulting";
 import { softSkillsDetails } from "../data/resume-softskills";
 import {
   ResumeGithubBlock,
   ResumeWrapper,
-  ResumeButtonWrapper,
-  ResumeButton,
-  LeftColumn,
-  RightColumn,
-  PhoneContact,
   InstitutionFocus,
   ExperienceBlock,
   InstitutionName,
-  InstitutionGradDate,
   EducationBlock,
-  RatingGroup,
   SkillsetBlock,
   FlexHeader,
-  NextHeader,
-  ContactBlock,
-  EmailContact,
   ResumeLink,
   CompanyName,
   JobTitle,
@@ -29,16 +18,9 @@ import {
   JobDescription,
   SoftSkills,
   SoftSkillsWrapper,
-  DesignSubHeader,
-  DevelopmentSubHeader,
-  SoftSkillsSubHeader,
   Institution,
   EducationWrapper,
   SkillsetWrapper,
-  DevelopmentBlock,
-  DesignBlock,
-  SoftSkillsBlock,
-  SummaryBlock,
   CompanySummary,
   CompanyBlock,
   CompanyLocation,
@@ -47,7 +29,6 @@ import {
   JobExperienceWrapper,
   JobTechWrapper,
   ExperienceTitle,
-  TechTitle,
   TechTitleCopy,
   ExperienceTitleCopy,
   ExperienceBlockTitles,
@@ -62,12 +43,7 @@ export default function Resume() {
         <ResumeLink
           href="https://www.dropbox.com/scl/fi/1orkqmx5r22gqnfmdb8o8/efriendly-Vizente-Freeman-v11.pdf?rlkey=66bka9lp2837n5avfn5p3xvtz&dl=0"
           target="_blank"
-        >
-          {/* <ResumeButton>
-            <DownloadIcon />
-            <span>PDF</span>
-          </ResumeButton> */}
-        </ResumeLink>
+        ></ResumeLink>
       </FlexHeader>
 
       <ResumeWrapper>
@@ -106,14 +82,6 @@ export default function Resume() {
                       ))}
                     </JobDescription>
                   </JobExperienceWrapper>
-                  {/* <JobTechWrapper>
-                  <TechTitleCopy>Technologies</TechTitleCopy>
-                  <ul>
-                    {job.jobTechnologies.map((techscripts, i) => (
-                      <li>{techscripts.jobStopTech}</li>
-                    ))}
-                  </ul>
-                </JobTechWrapper> */}
                 </ExperienceTechBlock>
               ))}
           </ConsultingSkillsWrapper>
