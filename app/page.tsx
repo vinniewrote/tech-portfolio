@@ -2,8 +2,8 @@
 import { BodyContainer, MasonryBlock } from "../styling/shared_styles";
 import Headline from "@/components/Headline";
 import Highlights from "@/components/Highlights";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import PastWork from "@/components/PastWork";
 import SpeakingPresentations from "@/components/SpeakingPresentations";
 import Resume from "@/components/Resume";
