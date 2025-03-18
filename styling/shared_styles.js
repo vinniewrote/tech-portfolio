@@ -8,10 +8,8 @@ export const BlackAppWrapper = styled.div`
 `;
 
 export const BodyWrapper = styled.body`
-  width: 100%;
-  height: 100%;
   background: #000000;
-  padding: 10px;
+  /* padding: 10px; */
 `;
 
 export const LeoAppContainer = styled.div`
@@ -57,8 +55,9 @@ export const SocialConnectRow = styled.div`
   flex-direction: row;
   width: 100%;
   justify-content: center;
+  gap: 30px;
   & a {
-    margin: 0 10px 0 0;
+    margin: 0;
   }
   & a:last-child {
     margin: 0;
@@ -77,7 +76,7 @@ export const SocialConnectRow = styled.div`
     fill: #c29f00;
   }
   & img {
-    width: 40px;
+    width: 30px;
     height: auto;
   }
   @media screen and (min-width: 768px) {
@@ -108,22 +107,33 @@ export const PurpleRing = styled.div`
 `;
 
 export const PortfolioButton = styled.button`
-  border: 1px solid #c29f00;
+  border: 2px solid #c29f00;
   border-radius: 4px;
   background-color: transparent;
   color: #c29f00;
-  padding: 5px 10px;
+  padding: 10px;
   font-family: "Inconsolata", sans-serif;
   font-weight: 900;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 1em;
+  line-height: 1.2em;
   text-transform: uppercase;
   transition: all 1s ease-out;
+  width: 100%;
+  margin: 0 auto;
+
+  & a {
+    text-decoration: none;
+    color: #c29f00;
+    transition: color 1s ease-out;
+  }
 
   &:hover {
-    border: 1px solid #5e0b86;
+    border: 2px solid #5e0b86;
     color: #5e0b86;
     cursor: pointer;
+    & a {
+      color: #5e0b86;
+    }
   }
 `;
 
@@ -187,9 +197,6 @@ export const ButtonRow = styled.div`
 
 export const SocialLinks = styled.a`
   text-decoration: none;
-  /* & svg {
-    width: 40px;
-  } */
 `;
 
 export const GithubCTA = styled.button`
@@ -250,9 +257,13 @@ export const GithubCTA = styled.button`
 `;
 
 export const BodyContainer = styled.div`
-  padding: 20px 0;
+  padding: 0 0 20px 0;
   display: flex;
   flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 0 20px 0;
+  }
 `;
 
 export const MasonryBlock = styled.div`

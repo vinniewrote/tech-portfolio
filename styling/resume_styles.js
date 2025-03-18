@@ -29,11 +29,8 @@ export const ResumeWrapper = styled.div`
 `;
 export const CompanyBlock = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   column-gap: 7px;
-  @media screen and (max-width: 810px) {
-    flex-direction: column;
-  }
 `;
 
 export const SummaryBlock = styled.div`
@@ -60,7 +57,7 @@ export const CompanySummary = styled.h5`
   font-size: 1em;
   font-weight: 100;
   line-height: 1.5em;
-  font-style: italic;
+  /* font-style: italic; */
   padding: 0;
   margin: 0;
 `;
@@ -443,7 +440,7 @@ export const FlexHeader = styled.div`
   @media screen and (max-width: 768px) {
     /* flex-direction: column; */
     & h3 {
-      padding-left: 1.25em;
+      /* padding-left: 1.25em; */
     }
   }
 `;
@@ -487,7 +484,7 @@ export const JobTitle = styled.h5`
 export const JobTimeRange = styled.p`
   font-family: "Raleway", sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1em;
   line-height: 1.5em;
   font-variant: normal;

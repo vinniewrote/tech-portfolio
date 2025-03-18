@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 import {
   PortfolioBlock,
   PortfolioContainer,
@@ -8,23 +10,23 @@ import {
   PortfolioInverseWrapper,
   CopyWrapper,
   CarouselWrapper,
-} from "../styles/portfolioDetail_styles";
+} from "../styling/portfolioDetail_styles";
 import { Carousel } from "react-responsive-carousel";
 
-import problem_1 from "../images/problem_1.png";
-import problem_1_mobile from "../images/problemOne_mobile.svg";
-import solution_1_mobile from "../images/solutionOne_mobile.svg";
-import solution_1_mobile_new from "../images/solutionOne_mobile-new.svg";
-import solution_2_mobile from "../images/solutionTwo_mobile.svg";
-import solution_3_desktop from "../images/solutionThree_desktop.svg";
-import solution_4_desktop from "../images/solutionFour_desktop.svg";
-import solution_5_desktop from "../images/solutionFive_desktop.svg";
-import solution_1 from "../images/solution_1.png";
-import solution_2 from "../images/solution_2.png";
-import solution_3 from "../images/solution_3.png";
-import solution_4 from "../images/solution_4.png";
-import solution_5 from "../images/solution_5.png";
-import success from "../images/success_icon.svg";
+import problem_1 from "../public/images/problem_1.png";
+import problem_1_mobile from "../public/images/problemOne_mobile.svg";
+import solution_1_mobile from "../public/images/solutionOne_mobile.svg";
+import solution_1_mobile_new from "../public/images/solutionOne_mobile-new.svg";
+import solution_2_mobile from "../public/images/solutionTwo_mobile.svg";
+import solution_3_desktop from "../public/images/solutionThree_desktop.svg";
+import solution_4_desktop from "../public/images/solutionFour_desktop.svg";
+import solution_5_desktop from "../public/images/solutionFive_desktop.svg";
+import solution_1 from "../public/images/solution_1.png";
+import solution_2 from "../public/images/solution_2.png";
+import solution_3 from "../public/images/solution_3.png";
+import solution_4 from "../public/images/solution_4.png";
+import solution_5 from "../public/images/solution_5.png";
+import success from "../public/images/success_icon.svg";
 
 export default function ThirdPartyAuth() {
   const arrowStyles = {
@@ -65,7 +67,12 @@ export default function ThirdPartyAuth() {
           </PortfolioCopyBlock>
           <PortfolioImageBlock>
             <div>
-              <img src={problem_1_mobile} alt="problem" />
+              <Image
+                src={problem_1_mobile}
+                alt="problem"
+                width={100}
+                height={100}
+              />
             </div>
           </PortfolioImageBlock>
         </PortfolioWrapper>
@@ -162,24 +169,19 @@ export default function ThirdPartyAuth() {
                 }}
               >
                 <div>
-                  <img src={solution_1_mobile_new} />
-                  {/* <p className="legend">Legend 1</p> */}
+                  <Image src={solution_1_mobile_new} width={100} height={100} />
                 </div>
                 <div>
-                  <img src={solution_2_mobile} />
-                  {/* <p className="legend">Legend 2</p> */}
+                  <Image src={solution_2_mobile} width={100} height={100} />
                 </div>
                 <div>
-                  <img src={solution_3_desktop} />
-                  {/* <p className="legend">Legend 3</p> */}
+                  <Image src={solution_3_desktop} width={100} height={100} />
                 </div>
                 <div>
-                  <img src={solution_4_desktop} />
-                  {/* <p className="legend">Legend 4</p> */}
+                  <Image src={solution_4_desktop} width={100} height={100} />
                 </div>
                 <div>
-                  <img src={solution_5_desktop} />
-                  {/* <p className="legend">Legend 5</p> */}
+                  <Image src={solution_5_desktop} width={100} height={100} />
                 </div>
               </Carousel>
             </CarouselWrapper>

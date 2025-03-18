@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   SocialConnectBlock,
   SocialConnectRow,
@@ -12,7 +13,7 @@ export default function SocialBlock() {
   return (
     <SocialConnectBlock>
       <SocialConnectRow>
-        <SocialLinks
+        <Link
           href="https://www.linkedin.com/in/vizentefreeman/"
           target="_blank"
           rel="noreferrer"
@@ -21,12 +22,12 @@ export default function SocialBlock() {
             aria-hidden
             src="/images/linkedin.svg"
             alt="linkedin icon"
-            width={16}
-            height={16}
+            width={30}
+            height={30}
           />
-        </SocialLinks>
+        </Link>
 
-        <SocialLinks
+        <Link
           href="https://github.com/vinniewrote"
           target="_blank"
           rel="noreferrer"
@@ -35,10 +36,10 @@ export default function SocialBlock() {
             aria-hidden
             src="/images/github.svg"
             alt="github icon"
-            width={16}
-            height={16}
+            width={30}
+            height={30}
           />
-        </SocialLinks>
+        </Link>
       </SocialConnectRow>
     </SocialConnectBlock>
   );
