@@ -1,5 +1,11 @@
 import React from "react";
-import { HighlightsBlock, HighlightWrapper } from "../styling/shared_styles";
+import Link from "next/link";
+import {
+  HighlightsBlock,
+  HighlightWrapper,
+  PortfolioButtonWrapper,
+  HightlightButtonWrapper,
+} from "../styling/shared_styles";
 import { HighlightButton } from "../styling/highlight_styles";
 
 export default function Highlights() {
@@ -8,13 +14,17 @@ export default function Highlights() {
       <h3>Important Links</h3>
       <h5>Dev/Design</h5>
       <HighlightWrapper>
-        <a href="https://www.foxtrotco.com" target="_blank" rel="noreferrer">
+        <Link href="https://www.foxtrotco.com" target="_blank" rel="noreferrer">
           <HighlightButton>Foxtrot Market</HighlightButton>
-        </a>
+        </Link>
 
-        <a href="https://www.thinkcerca.com/" target="_blank" rel="noreferrer">
+        <Link
+          href="https://www.thinkcerca.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <HighlightButton>ThinkCERCA</HighlightButton>
-        </a>
+        </Link>
       </HighlightWrapper>
 
       <h5>Art/Music</h5>

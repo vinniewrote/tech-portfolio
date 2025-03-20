@@ -6,36 +6,24 @@ export const SpeakingPresentationsBlock = styled.div`
   border: 5px solid;
   border-image: linear-gradient(-45deg, #5e0b86, #c29f00) 1;
   margin: 10px 0;
+`;
 
-  @media screen and (max-width: 1024px) {
-  }
-
-  @media screen and (max-width: 768px) {
-  }
-
-  & h3 {
-    font-family: "Raleway", sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    color: #c29f00;
-    font-size: 32px;
-    line-height: 38px;
-    font-weight: 800;
-    margin: 0;
-  }
+export const PresentationBlockHeader = styled.h3`
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #c29f00;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 800;
+  margin: 0;
 `;
 
 export const ConferenceCardContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* min-width: 1254px; */
+  flex-direction: column;
   margin: 20px 0 0 0;
   column-gap: 90px;
-
-  @media screen and (max-width: 576px) {
-    flex-direction: column;
-  }
 `;
 
 export const ConferenceCard = styled.div`
@@ -51,12 +39,10 @@ export const ConferenceCard = styled.div`
   & a {
     text-decoration: none;
   }
-  & a h4 {
+  & h4 {
     color: #ffffff;
   }
-  & a h5 {
-    color: #c29f00;
-  }
+
   &:hover {
     border: 2px solid #5e0b86;
     cursor: pointer;
@@ -66,9 +52,6 @@ export const ConferenceCard = styled.div`
     }
     & a h4 {
       color: #c29f00;
-    }
-    & a h5 {
-      color: #ffffff;
     }
   }
 
@@ -90,12 +73,8 @@ export const ConferenceCard = styled.div`
     font-family: "Inconsolata", sans-serif;
     font-size: 18px;
     font-weight: 700;
-    background-color: #5e0b86;
     text-align: left;
-    padding: 0 10px;
-    transition: color 0.75s ease;
-    border-bottom: 2px solid #c29f00;
-    transition: border 0.75s ease;
+    padding: 0;
   }
 
   & h4 {
@@ -107,31 +86,46 @@ export const ConferenceCard = styled.div`
     padding: 0 10px;
     transition: color 0.75s ease;
   }
+`;
 
-  & h5 {
-    font-family: "Roboto Slab", serif;
-    font-weight: 500;
-    font-size: 1em;
-    line-height: 18px;
-    text-align: center;
-    margin: 0 0 20px 0;
-    padding: 0 10px;
-    transition: color 0.75s ease;
-  }
+export const PresentationCardTopBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #5e0b86;
+  transition: color 0.75s ease;
+  border-bottom: 2px solid #c29f00;
+  transition: border 0.75s ease;
+`;
 
-  @media screen and (max-width: 768px) {
-    /* width: 180px;
-    margin: 0.75em auto;
-    padding: 0; */
-    /* & h4 {
-      font-size: 18px;
-    }
-    & h5 {
-      font-size: 12px;
-    } */
-  }
+export const PresentationCardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-  @media screen and (max-width: 576px) {
-    width: 100%;
-  }
+export const PresentationCardButton = styled.button`
+  width: 33%;
+  border: 2px solid #c29f00;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 18px;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 0 auto;
+`;
+
+export const PresentationCardTitle = styled.h5`
+  color: #c29f00;
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 18px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  transition: color 0.75s ease;
 `;

@@ -8,7 +8,10 @@ import {
   PastWorkWrapper,
 } from "../styling/pastWork_styles";
 import foxtrot from "../public/images/foxtrot-portfolio-logo.svg";
-import { PortfolioButton } from "../styling/shared_styles";
+import {
+  PortfolioButton,
+  PortfolioButtonWrapper,
+} from "../styling/shared_styles";
 
 export default function PastWork() {
   return (
@@ -21,12 +24,13 @@ export default function PastWork() {
           </PastWorkLogo>
           {/* <h5>Foxtrot: Third Party Authentication</h5> */}
           <p>A large-scale project focused on easing the user process.</p>
-
-          <PortfolioButton>
+          <PortfolioButtonWrapper>
             <Link href="/foxtrot-tpa">
-              <span>Learn More</span>
+              <PortfolioButton>
+                <span>Learn More</span>
+              </PortfolioButton>
             </Link>
-          </PortfolioButton>
+          </PortfolioButtonWrapper>
         </PastWorkSlide>
 
         <PastWorkSlide>
@@ -35,10 +39,13 @@ export default function PastWork() {
           </PastWorkLogo>
           {/* <h5>Foxtrot: Shop by Brand</h5> */}
           <p>Higlighting some of the best brands that Foxtrot has to offer.</p>
-
-          <PortfolioButton>
-            <Link href="/foxtrot-shop">Learn More</Link>
-          </PortfolioButton>
+          <PortfolioButtonWrapper>
+            <Link href="/foxtrot-shop">
+              <PortfolioButton>
+                <span>Learn More</span>
+              </PortfolioButton>
+            </Link>
+          </PortfolioButtonWrapper>
         </PastWorkSlide>
       </PastWorkWrapper>
     </PastWorkBlock>
