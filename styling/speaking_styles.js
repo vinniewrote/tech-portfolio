@@ -36,56 +36,6 @@ export const ConferenceCard = styled.div`
   padding: 0;
   transition: border 0.75s ease;
   flex-grow: 1;
-  & a {
-    text-decoration: none;
-  }
-  & h4 {
-    color: #ffffff;
-  }
-
-  &:hover {
-    border: 2px solid #5e0b86;
-    cursor: pointer;
-    & h3 {
-      color: #ffffff;
-      border-bottom: 2px solid #5e0b86;
-    }
-    & a h4 {
-      color: #c29f00;
-    }
-  }
-
-  &:active {
-    border: 2px solid #3a0951;
-    cursor: pointer;
-    & h3 {
-      color: #ffffff;
-    }
-    & a h4 {
-      color: #3a0951;
-    }
-    & a h5 {
-      color: rgba(194, 159, 0, 0.5);
-    }
-  }
-
-  & h3 {
-    font-family: "Inconsolata", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: left;
-    padding: 0;
-  }
-
-  & h4 {
-    font-family: "Raleway", sans-serif;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    margin: 20px 0;
-    padding: 0 10px;
-    transition: color 0.75s ease;
-  }
 `;
 
 export const PresentationCardTopBar = styled.div`
@@ -93,39 +43,73 @@ export const PresentationCardTopBar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   background-color: #5e0b86;
-  transition: color 0.75s ease;
+  /* transition: color 0.75s ease; */
   border-bottom: 2px solid #c29f00;
-  transition: border 0.75s ease;
+  /* transition: border 0.75s ease; */
+  padding: 10px;
+  & h3,
+  & h4 {
+    font-family: "Inconsolata", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 export const PresentationCardBody = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
+export const PresentationCardFooter = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 0;
+`;
+export const PresentationCardButtonWrapper = styled.div`
+  width: 50%;
+  margin: 0 auto;
+`;
 export const PresentationCardButton = styled.button`
-  width: 33%;
-  border: 2px solid #c29f00;
-  border-radius: 6px;
-  background-color: transparent;
-  color: #ffffff;
-  font-family: "Roboto Slab", serif;
-  font-weight: 500;
+  border: 2px solid #5e0b86;
+  font-weight: 900;
   font-size: 1em;
-  line-height: 18px;
+  line-height: 1.2em;
   text-align: center;
   padding: 5px 10px;
-  margin: 0 auto;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #c29f00;
+  color: #5e0b86;
+  padding: 10px;
+  font-family: "Inconsolata", sans-serif;
+  text-transform: uppercase;
+  transition: all 1s ease-out;
+
+  & a {
+    text-decoration: none;
+    color: #c29f00;
+    transition: color 1s ease-out;
+  }
+
+  &:hover {
+    border: 2px solid #5e0b86;
+    color: #5e0b86;
+    cursor: pointer;
+    & a {
+      color: #5e0b86;
+    }
+  }
 `;
 
 export const PresentationCardTitle = styled.h5`
   color: #c29f00;
   font-family: "Roboto Slab", serif;
   font-weight: 500;
-  font-size: 1em;
-  line-height: 18px;
+  font-size: 18px;
+  line-height: 20px;
   text-align: center;
-  margin: 0 0 20px 0;
+  margin: 10px 0;
   padding: 10px;
   transition: color 0.75s ease;
 `;
