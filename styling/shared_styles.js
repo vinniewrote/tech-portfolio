@@ -105,7 +105,18 @@ export const PurpleRing = styled.div`
   top: 1px;
   left: -1px;
 `;
-
+export const PortfolioButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+`;
+export const HightlightButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+`;
 export const PortfolioButton = styled.button`
   border: 2px solid #c29f00;
   border-radius: 4px;
