@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import Image from "next/image";
 import {
   PortfolioBlock,
@@ -11,9 +11,7 @@ import {
   CopyWrapper,
   CarouselWrapper,
 } from "../styling/portfolioDetail_styles";
-import { Carousel } from "react-responsive-carousel";
 
-import problem_1 from "../public/images/problem_1.png";
 import problem_1_mobile from "../public/images/problemOne_mobile.svg";
 import solution_1_mobile from "../public/images/solutionOne_mobile.svg";
 import solution_1_mobile_new from "../public/images/solutionOne_mobile-new.svg";
@@ -21,33 +19,24 @@ import solution_2_mobile from "../public/images/solutionTwo_mobile.svg";
 import solution_3_desktop from "../public/images/solutionThree_desktop.svg";
 import solution_4_desktop from "../public/images/solutionFour_desktop.svg";
 import solution_5_desktop from "../public/images/solutionFive_desktop.svg";
-import solution_1 from "../public/images/solution_1.png";
-import solution_2 from "../public/images/solution_2.png";
-import solution_3 from "../public/images/solution_3.png";
-import solution_4 from "../public/images/solution_4.png";
-import solution_5 from "../public/images/solution_5.png";
 import success from "../public/images/success_icon.svg";
+import useEmblaCarousel from "embla-carousel-react";
 
 export default function ThirdPartyAuth() {
-  const arrowStyles = {
-    position: "absolute",
-    zIndex: 2,
-    top: "calc(50% - 15px)",
-    width: 30,
-    height: 30,
-    cursor: "pointer",
-  };
+  const [emblaRef, emblaApi] = useEmblaCarousel();
 
-  const indicatorStyles = {
-    background: "#c29f00",
-    border: "1px solid #999595",
-    borderRadius: "50%",
-    cursor: "pointer",
-    width: 16,
-    height: 16,
-    display: "inline-block",
-    margin: "0 8px",
-  };
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      console.log(emblaApi.slideNodes()); // Access API
+    }
+  }, [emblaApi]);
   return (
     <PortfolioBlock id="thirdPartyAuth">
       <h3>Foxtrot Market : Third Party Authentication</h3>
@@ -90,101 +79,93 @@ export default function ThirdPartyAuth() {
             </CopyWrapper>
           </PortfolioCopyBlock>
           <PortfolioImageBlock>
-            <CarouselWrapper>
-              <Carousel
-                dynamicHeight={true}
-                showThumbs={false}
-                statusFormatter={(current, total) =>
-                  `Current slide: ${current} / Total: ${total}`
-                }
-                renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                  hasPrev && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      style={{
-                        ...arrowStyles,
-                        background: "transparent",
-                        border: "2px solid #c29f00",
-                        color: "#c29f00",
-                        borderRadius: "4px",
-                        width: "75px",
-                        height: "75px",
-                        padding: "5px",
-                        fontSize: "2em",
-                        left: 15,
-                      }}
-                    >
-                      &#8592;
-                    </button>
-                  )
-                }
-                renderArrowNext={(onClickHandler, hasNext, label) =>
-                  hasNext && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      style={{
-                        ...arrowStyles,
-                        background: "transparent",
-                        border: "2px solid #c29f00",
-                        color: "#c29f00",
-                        borderRadius: "4px",
-                        width: "75px",
-                        height: "75px",
-                        padding: "5px",
-                        fontSize: "2em",
-                        right: 15,
-                      }}
-                    >
-                      &#8594;
-                    </button>
-                  )
-                }
-                renderIndicator={(onClickHandler, isSelected, index, label) => {
-                  if (isSelected) {
-                    return (
-                      <li
-                        style={{ ...indicatorStyles, background: "#5E0B86" }}
-                        aria-label={`Selected: ${label} ${index + 1}`}
-                        title={`Selected: ${label} ${index + 1}`}
-                      />
-                    );
-                  }
-                  return (
-                    <li
-                      style={indicatorStyles}
-                      onClick={onClickHandler}
-                      onKeyDown={onClickHandler}
-                      value={index}
-                      key={index}
-                      role="button"
-                      tabIndex={0}
-                      title={`${label} ${index + 1}`}
-                      aria-label={`${label} ${index + 1}`}
-                    />
-                  );
-                }}
+            <div className="embla">
+              <div
+                className="embla_viewport"
+                style={{ overflow: "hidden", position: "relative" }}
+                ref={emblaRef}
               >
-                <div>
-                  <Image src={solution_1_mobile_new} width={100} height={100} />
+                <div className="embla__container" style={{ display: "flex" }}>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image
+                      src={solution_1_mobile_new}
+                      alt="mobile-solution-1"
+                    />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={solution_2_mobile} alt="mobile-solution-2" />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={solution_3_desktop} alt="desktop-solution-3" />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={solution_4_desktop} alt="desktop-solution-4" />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={solution_5_desktop} alt="desktop-solution-5" />
+                  </div>
                 </div>
-                <div>
-                  <Image src={solution_2_mobile} width={100} height={100} />
+
+                <div
+                  className="button-wrapper"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    position: "absolute",
+                    top: "50%",
+                    width: "100%",
+                  }}
+                >
+                  <button
+                    className="embla__prev"
+                    onClick={scrollPrev}
+                    style={{
+                      background: "transparent",
+                      border: "2px solid #c29f00",
+                      color: "#c29f00",
+                      borderRadius: "4px",
+                      width: "75px",
+                      height: "75px",
+                      padding: "5px",
+                      fontSize: "2em",
+                    }}
+                  >
+                    &#8592;
+                  </button>
+                  <button
+                    className="embla__next"
+                    onClick={scrollNext}
+                    style={{
+                      background: "transparent",
+                      border: "2px solid #c29f00",
+                      color: "#c29f00",
+                      borderRadius: "4px",
+                      width: "75px",
+                      height: "75px",
+                      padding: "5px",
+                      fontSize: "2em",
+                    }}
+                  >
+                    &#8594;
+                  </button>
                 </div>
-                <div>
-                  <Image src={solution_3_desktop} width={100} height={100} />
-                </div>
-                <div>
-                  <Image src={solution_4_desktop} width={100} height={100} />
-                </div>
-                <div>
-                  <Image src={solution_5_desktop} width={100} height={100} />
-                </div>
-              </Carousel>
-            </CarouselWrapper>
+              </div>
+            </div>
           </PortfolioImageBlock>
         </PortfolioInverseWrapper>
         <PortfolioWrapper>
@@ -199,7 +180,7 @@ export default function ThirdPartyAuth() {
           </PortfolioCopyBlock>
           <PortfolioImageBlock>
             <div>
-              <img src={success} alt="success" />
+              <Image src={success} alt="success" />
             </div>
           </PortfolioImageBlock>
         </PortfolioWrapper>

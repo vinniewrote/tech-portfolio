@@ -271,6 +271,8 @@ export const BodyContainer = styled.div`
   padding: 0 0 20px 0;
   display: flex;
   flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) {
     padding: 20px 0 20px 0;

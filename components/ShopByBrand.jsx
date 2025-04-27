@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import Image from "next/image";
 import {
   PortfolioBlock,
@@ -11,17 +11,8 @@ import {
   CopyWrapper,
   CarouselWrapper,
 } from "../styling/portfolioDetail_styles";
-import { Carousel } from "react-responsive-carousel";
+
 import problem from "../public/images/problem_icon.svg";
-// import shopByBrand_mobile_homepage_solution from "../images/shopByBrand_mobile_homepage_solution.png";
-// import shopByBrand_mobile_search_solution from "../images/shopByBrand_mobile_search_solution.png";
-// import shopByBrand_mobile_sidebar_solution from "../images/shopByBrand_mobile_sidebar_solution.png";
-// import shopByBrand_tablet_homepage_solution from "../images/shopByBrand_tablet_homepage_solution.png";
-// import shopByBrand_tablet_nav_solution from "../images/shopByBrand_tablet_nav_solution.png";
-// import shopByBrand_tablet_search_solution from "../images/shopByBrand_tablet_search_solution.png";
-// import shopByBrand_desktop_gatingpage_outcome from "../images/shopByBrand_desktop_gatingpage_outcome.png";
-// import shopByBrand_mobile_gatingpage_outcome from "../images/shopByBrand_mobile_gatingpage_outcome.png";
-// import shopByBrand_tablet_gatingpage_outcome from "../images/shopByBrand_tablet_gatingpage_outcome.png";
 import sbp_outcome_desktop from "../public/images/ShopByBrand_outcome_desktop.svg";
 import sbp_outcome_tablet from "../public/images/ShopByBrand_outcome_iPad.svg";
 import sbp_outcome_mobile from "../public/images/ShopByBrand_outcome_mobile.svg";
@@ -31,27 +22,30 @@ import sbp_solution_mobile_search from "../public/images/sbp_solution_mobile_sea
 import sbp_solution_desktop_search from "../public/images/sbp_solution_desktop_search.svg";
 import sbp_solution_tablet_search from "../public/images/sbp_solution_tablet_search.svg";
 import sbp_solution_tablet_home from "../public/images/sbp_solution_tablet_home.svg";
+import useEmblaCarousel from "embla-carousel-react";
 
 export default function ShopByBrand() {
-  const arrowStyles = {
-    position: "absolute",
-    zIndex: 2,
-    top: "calc(50% - 15px)",
-    width: 30,
-    height: 30,
-    cursor: "pointer",
-  };
+  const [emblaRef, emblaApi] = useEmblaCarousel();
 
-  const indicatorStyles = {
-    background: "#c29f00",
-    border: "1px solid #999595",
-    borderRadius: "50%",
-    cursor: "pointer",
-    width: 16,
-    height: 16,
-    display: "inline-block",
-    margin: "0 8px",
-  };
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const buttonPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+  const buttonNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      console.log(emblaApi.slideNodes()); // Access API
+    }
+  }, [emblaApi]);
   return (
     <PortfolioBlock id="shopByBrandDetails">
       <h3>Foxtrot Market : Shop By Brand</h3>
@@ -85,116 +79,109 @@ export default function ShopByBrand() {
             </CopyWrapper>
           </PortfolioCopyBlock>
           <PortfolioImageBlock>
-            <CarouselWrapper>
-              <Carousel
-                dynamicHeight={true}
-                showThumbs={false}
-                statusFormatter={(current, total) =>
-                  `Current slide: ${current} / Total: ${total}`
-                }
-                renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                  hasPrev && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      style={{
-                        ...arrowStyles,
-                        background: "transparent",
-                        border: "2px solid #c29f00",
-                        color: "#c29f00",
-                        borderRadius: "4px",
-                        width: "75px",
-                        height: "75px",
-                        padding: "5px",
-                        fontSize: "2em",
-                        left: 15,
-                      }}
-                    >
-                      &#8592;
-                    </button>
-                  )
-                }
-                renderArrowNext={(onClickHandler, hasNext, label) =>
-                  hasNext && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      style={{
-                        ...arrowStyles,
-                        background: "transparent",
-                        border: "2px solid #c29f00",
-                        color: "#c29f00",
-                        borderRadius: "4px",
-                        width: "75px",
-                        height: "75px",
-                        padding: "5px",
-                        fontSize: "2em",
-                        right: 15,
-                      }}
-                    >
-                      &#8594;
-                    </button>
-                  )
-                }
-                renderIndicator={(onClickHandler, isSelected, index, label) => {
-                  if (isSelected) {
-                    return (
-                      <li
-                        style={{ ...indicatorStyles, background: "#5E0B86" }}
-                        aria-label={`Selected: ${label} ${index + 1}`}
-                        title={`Selected: ${label} ${index + 1}`}
-                      />
-                    );
-                  }
-                  return (
-                    <li
-                      style={indicatorStyles}
-                      onClick={onClickHandler}
-                      onKeyDown={onClickHandler}
-                      value={index}
-                      key={index}
-                      role="button"
-                      tabIndex={0}
-                      title={`${label} ${index + 1}`}
-                      aria-label={`${label} ${index + 1}`}
-                    />
-                  );
-                }}
+            {/* construction */}
+            <div className="embla">
+              <div
+                className="embla_viewport"
+                style={{ overflow: "hidden", position: "relative" }}
+                ref={emblaRef}
               >
-                <div>
-                  {/* <img src={sbp_solution_desktop_search} /> */}
-                  <Image
-                    src={sbp_solution_desktop_search}
-                    width={100}
-                    height={100}
-                    alt="problem"
-                  />
-                  {/* <p className="legend">Legend 1</p> */}
+                <div className="embla__container" style={{ display: "flex" }}>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image
+                      src={sbp_solution_desktop_search}
+                      alt="desktop-search"
+                    />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image
+                      src={sbp_solution_mobile_home}
+                      alt="mobile-solution"
+                    />
+                  </div>
+
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={sbp_solution_mobile_nav} alt="mobile-nav" />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image
+                      src={sbp_solution_mobile_search}
+                      alt="mobile-search"
+                    />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image
+                      src={sbp_solution_tablet_search}
+                      alt="tablet-search"
+                    />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={sbp_solution_tablet_home} alt="tablet-home" />
+                  </div>
                 </div>
-                <div>
-                  <img src={sbp_solution_mobile_home} />
-                  {/* <p className="legend">Legend 2</p> */}
+                <div
+                  className="button-wrapper"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    position: "absolute",
+                    top: "50%",
+                    width: "100%",
+                  }}
+                >
+                  <button
+                    className="embla__prev"
+                    onClick={scrollPrev}
+                    style={{
+                      background: "transparent",
+                      border: "2px solid #c29f00",
+                      color: "#c29f00",
+                      borderRadius: "4px",
+                      width: "75px",
+                      height: "75px",
+                      padding: "5px",
+                      fontSize: "2em",
+                    }}
+                  >
+                    &#8592;
+                  </button>
+                  <button
+                    className="embla__next"
+                    onClick={scrollNext}
+                    style={{
+                      background: "transparent",
+                      border: "2px solid #c29f00",
+                      color: "#c29f00",
+                      borderRadius: "4px",
+                      width: "75px",
+                      height: "75px",
+                      padding: "5px",
+                      fontSize: "2em",
+                    }}
+                  >
+                    &#8594;
+                  </button>
                 </div>
-                <div>
-                  <img src={sbp_solution_mobile_nav} />
-                  {/* <p className="legend">Legend 3</p> */}
-                </div>
-                <div>
-                  <img src={sbp_solution_mobile_search} />
-                  {/* <p className="legend">Legend 5</p> */}
-                </div>
-                <div>
-                  <img src={sbp_solution_tablet_search} />
-                  {/* <p className="legend">Legend 4</p> */}
-                </div>
-                <div>
-                  <img src={sbp_solution_tablet_home} />
-                  {/* <p className="legend">Legend 5</p> */}
-                </div>
-              </Carousel>
-            </CarouselWrapper>
+              </div>
+            </div>
           </PortfolioImageBlock>
         </PortfolioInverseWrapper>
 
@@ -210,98 +197,78 @@ export default function ShopByBrand() {
             </CopyWrapper>
           </PortfolioCopyBlock>
           <PortfolioImageBlock>
-            <CarouselWrapper>
-              <Carousel
-                dynamicHeight={true}
-                showThumbs={false}
-                statusFormatter={(current, total) =>
-                  `Current slide: ${current} / Total: ${total}`
-                }
-                renderArrowPrev={(onClickHandler, hasPrev, label) =>
-                  hasPrev && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      style={{
-                        ...arrowStyles,
-                        background: "transparent",
-                        border: "2px solid #c29f00",
-                        color: "#c29f00",
-                        borderRadius: "4px",
-                        width: "75px",
-                        height: "75px",
-                        padding: "5px",
-                        fontSize: "2em",
-                        left: 15,
-                      }}
-                    >
-                      &#8592;
-                    </button>
-                  )
-                }
-                renderArrowNext={(onClickHandler, hasNext, label) =>
-                  hasNext && (
-                    <button
-                      type="button"
-                      onClick={onClickHandler}
-                      title={label}
-                      style={{
-                        ...arrowStyles,
-                        background: "transparent",
-                        border: "2px solid #c29f00",
-                        color: "#c29f00",
-                        borderRadius: "4px",
-                        width: "75px",
-                        height: "75px",
-                        padding: "5px",
-                        fontSize: "2em",
-                        right: 15,
-                      }}
-                    >
-                      &#8594;
-                    </button>
-                  )
-                }
-                renderIndicator={(onClickHandler, isSelected, index, label) => {
-                  if (isSelected) {
-                    return (
-                      <li
-                        style={{ ...indicatorStyles, background: "#5E0B86" }}
-                        aria-label={`Selected: ${label} ${index + 1}`}
-                        title={`Selected: ${label} ${index + 1}`}
-                      />
-                    );
-                  }
-                  return (
-                    <li
-                      style={indicatorStyles}
-                      onClick={onClickHandler}
-                      onKeyDown={onClickHandler}
-                      value={index}
-                      key={index}
-                      role="button"
-                      tabIndex={0}
-                      title={`${label} ${index + 1}`}
-                      aria-label={`${label} ${index + 1}`}
-                    />
-                  );
-                }}
+            <div className="embla">
+              <div
+                className="embla_viewport"
+                style={{ overflow: "hidden", position: "relative" }}
+                ref={emblaRef}
               >
-                <div>
-                  <img src={sbp_outcome_desktop} />
-                  {/* <p className="legend">Legend 1</p> */}
+                <div className="embla__container" style={{ display: "flex" }}>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={sbp_outcome_desktop} alt="outcome-desktop" />
+                  </div>
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={sbp_outcome_tablet} alt="outcome-tablet" />
+                  </div>
+
+                  <div
+                    className="embla__slide"
+                    style={{ flex: "0 0 100%", minWidth: " 0" }}
+                  >
+                    <Image src={sbp_outcome_mobile} alt="outcome-mobile" />
+                  </div>
                 </div>
-                <div>
-                  <img src={sbp_outcome_tablet} />
-                  {/* <p className="legend">Legend 2</p> */}
+                <div
+                  className="button-wrapper"
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    position: "absolute",
+                    top: "50%",
+                    width: "100%",
+                  }}
+                >
+                  <button
+                    className="embla__prev"
+                    onClick={buttonPrev}
+                    style={{
+                      background: "transparent",
+                      border: "2px solid #c29f00",
+                      color: "#c29f00",
+                      borderRadius: "4px",
+                      width: "75px",
+                      height: "75px",
+                      padding: "5px",
+                      fontSize: "2em",
+                    }}
+                  >
+                    &#8592;
+                  </button>
+                  <button
+                    className="embla__next"
+                    onClick={buttonNext}
+                    style={{
+                      background: "transparent",
+                      border: "2px solid #c29f00",
+                      color: "#c29f00",
+                      borderRadius: "4px",
+                      width: "75px",
+                      height: "75px",
+                      padding: "5px",
+                      fontSize: "2em",
+                    }}
+                  >
+                    &#8594;
+                  </button>
                 </div>
-                <div>
-                  <img src={sbp_outcome_mobile} />
-                  {/* <p className="legend">Legend 3</p> */}
-                </div>
-              </Carousel>
-            </CarouselWrapper>
+              </div>
+            </div>
           </PortfolioImageBlock>
         </PortfolioWrapper>
       </PortfolioContainer>
