@@ -8,6 +8,7 @@ export const MastHead = styled.div`
   color: white;
   margin: 1rem auto;
   width: 90%;
+  max-width: 1280px;
 
   @media screen and (min-width: 768px) {
     width: 100%;
