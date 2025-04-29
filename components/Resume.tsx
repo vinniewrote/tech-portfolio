@@ -15,7 +15,7 @@ import {
   CompanyName,
   JobTitle,
   JobTimeRange,
-  JobDescription,
+  // JobDescription,
   SoftSkills,
   SoftSkillsWrapper,
   Institution,
