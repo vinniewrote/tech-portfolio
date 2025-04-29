@@ -23,6 +23,7 @@ import sbp_solution_desktop_search from "../public/images/sbp_solution_desktop_s
 import sbp_solution_tablet_search from "../public/images/sbp_solution_tablet_search.svg";
 import sbp_solution_tablet_home from "../public/images/sbp_solution_tablet_home.svg";
 import useEmblaCarousel from "embla-carousel-react";
+import BrandOutcome from "./BrandOutcome";
 
 export default function ShopByBrand() {
   const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -31,13 +32,6 @@ export default function ShopByBrand() {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
   const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const buttonPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-  const buttonNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
@@ -149,7 +143,7 @@ export default function ShopByBrand() {
                 >
                   <button
                     className="embla__prev"
-                    onClick={scrollPrev}
+                    onClick={() => scrollPrev()}
                     style={{
                       background: "transparent",
                       border: "2px solid #c29f00",
@@ -165,7 +159,7 @@ export default function ShopByBrand() {
                   </button>
                   <button
                     className="embla__next"
-                    onClick={scrollNext}
+                    onClick={() => scrollNext()}
                     style={{
                       background: "transparent",
                       border: "2px solid #c29f00",
@@ -185,92 +179,8 @@ export default function ShopByBrand() {
           </PortfolioImageBlock>
         </PortfolioInverseWrapper>
 
-        <PortfolioWrapper>
-          <PortfolioCopyBlock>
-            <CopyWrapper>
-              <h3>The Outcome</h3>
-              <p>
-                Sales from the highlighted brands rose an average on 2.5% the
-                following month. It was then expanded to be shown on the main
-                gating page, further increasing visibility for brand new users.
-              </p>
-            </CopyWrapper>
-          </PortfolioCopyBlock>
-          <PortfolioImageBlock>
-            <div className="embla">
-              <div
-                className="embla_viewport"
-                style={{ overflow: "hidden", position: "relative" }}
-                ref={emblaRef}
-              >
-                <div className="embla__container" style={{ display: "flex" }}>
-                  <div
-                    className="embla__slide"
-                    style={{ flex: "0 0 100%", minWidth: " 0" }}
-                  >
-                    <Image src={sbp_outcome_desktop} alt="outcome-desktop" />
-                  </div>
-                  <div
-                    className="embla__slide"
-                    style={{ flex: "0 0 100%", minWidth: " 0" }}
-                  >
-                    <Image src={sbp_outcome_tablet} alt="outcome-tablet" />
-                  </div>
-
-                  <div
-                    className="embla__slide"
-                    style={{ flex: "0 0 100%", minWidth: " 0" }}
-                  >
-                    <Image src={sbp_outcome_mobile} alt="outcome-mobile" />
-                  </div>
-                </div>
-                <div
-                  className="button-wrapper"
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    position: "absolute",
-                    top: "50%",
-                    width: "100%",
-                  }}
-                >
-                  <button
-                    className="embla__prev"
-                    onClick={buttonPrev}
-                    style={{
-                      background: "transparent",
-                      border: "2px solid #c29f00",
-                      color: "#c29f00",
-                      borderRadius: "4px",
-                      width: "75px",
-                      height: "75px",
-                      padding: "5px",
-                      fontSize: "2em",
-                    }}
-                  >
-                    &#8592;
-                  </button>
-                  <button
-                    className="embla__next"
-                    onClick={buttonNext}
-                    style={{
-                      background: "transparent",
-                      border: "2px solid #c29f00",
-                      color: "#c29f00",
-                      borderRadius: "4px",
-                      width: "75px",
-                      height: "75px",
-                      padding: "5px",
-                      fontSize: "2em",
-                    }}
-                  >
-                    &#8594;
-                  </button>
-                </div>
-              </div>
-            </div>
-          </PortfolioImageBlock>
-        </PortfolioWrapper>
+        {/* add component here */}
+        <BrandOutcome />
       </PortfolioContainer>
     </PortfolioBlock>
   );
