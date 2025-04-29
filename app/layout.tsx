@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import StyledComponentsRegistry from "../lib/registry";
 import { BodyWrapper } from "../styling/shared_styles";
+import { raleway } from "./font";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={raleway.className}>
       <BodyWrapper>
         <StyledComponentsRegistry> {children} </StyledComponentsRegistry>
       </BodyWrapper>
