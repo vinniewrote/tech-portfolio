@@ -24,6 +24,12 @@ export const ConferenceCardContainer = styled.div`
   flex-direction: column;
   margin: 20px 0 0 0;
   column-gap: 90px;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ConferenceCard = styled.div`
@@ -36,6 +42,9 @@ export const ConferenceCard = styled.div`
   padding: 0;
   transition: border 0.75s ease;
   flex-grow: 1;
+  @media (min-width: 768px) {
+    width: 40%;
+  }
 `;
 
 export const PresentationCardTopBar = styled.div`
@@ -79,7 +88,7 @@ export const PresentationCardButton = styled.button`
   padding: 5px 10px;
   width: 100%;
   border-radius: 4px;
-  background-color: #c29f00;
+  background-color: transparent;
   color: #5e0b86;
   padding: 10px;
   font-family: "Inconsolata", sans-serif;
@@ -93,11 +102,11 @@ export const PresentationCardButton = styled.button`
   }
 
   &:hover {
-    border: 2px solid #5e0b86;
-    color: #5e0b86;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     cursor: pointer;
     & a {
-      color: #5e0b86;
+      color: #c29f00;
     }
   }
 `;

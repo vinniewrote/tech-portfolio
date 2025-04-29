@@ -76,11 +76,11 @@ export default function Resume() {
                       <CompanyLocation>{cjob.companyLocation}</CompanyLocation>
                     </CompanyBlock>
 
-                    <JobDescription>
+                    {/* <JobDescription>
                       {cjob.jobDescription.map((descripts, k) => (
                         <li key={k}>{descripts.jobStopBullet}</li>
                       ))}
-                    </JobDescription>
+                    </JobDescription> */}
                   </JobExperienceWrapper>
                 </ExperienceTechBlock>
               ))}
@@ -101,11 +101,11 @@ export default function Resume() {
                     <CompanyLocation>{job.companyLocation}</CompanyLocation>
                   </CompanyBlock>
                   <CompanySummary>{job.companySummary}</CompanySummary>
-                  <JobDescription>
+                  {/* <JobDescription>
                     {job.jobDescription.map((descripts, q) => (
                       <li key={q}>{descripts.jobStopBullet}</li>
                     ))}
-                  </JobDescription>
+                  </JobDescription> */}
                 </JobExperienceWrapper>
                 <JobTechWrapper>
                   <TechTitleCopy>Technologies</TechTitleCopy>
