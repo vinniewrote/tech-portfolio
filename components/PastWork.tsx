@@ -16,7 +16,7 @@ import {
 export default function PastWork() {
   return (
     <PastWorkBlock>
-      <h3>Past Work</h3>
+      <h3>Highlight Reel</h3>
       <PastWorkWrapper>
         <PastWorkSlide>
           <PastWorkLogo>
