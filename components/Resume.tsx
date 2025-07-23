@@ -1,6 +1,6 @@
 import React from "react";
-import { jobDetails } from "../data/resume-details";
-import { consultingDetails } from "../data/resume-consulting";
+// import { jobDetails } from "../data/resume-details";
+// import { consultingDetails } from "../data/resume-consulting";
 import { softSkillsDetails } from "../data/resume-softskills";
 import {
   ResumeGithubBlock,
@@ -11,39 +11,39 @@ import {
   EducationBlock,
   SkillsetBlock,
   FlexHeader,
-  ResumeLink,
-  CompanyName,
-  JobTitle,
-  JobTimeRange,
+  // ResumeLink,
+  // CompanyName,
+  // JobTitle,
+  // JobTimeRange,
   // JobDescription,
   SoftSkills,
   SoftSkillsWrapper,
   Institution,
   EducationWrapper,
   SkillsetWrapper,
-  CompanySummary,
-  CompanyBlock,
-  CompanyLocation,
-  ExperienceTitleWrapper,
-  ExperienceTechBlock,
-  JobExperienceWrapper,
-  JobTechWrapper,
-  ExperienceTitle,
-  TechTitleCopy,
-  ExperienceTitleCopy,
+  // CompanySummary,
+  // CompanyBlock,
+  // CompanyLocation,
+  // ExperienceTitleWrapper,
+  // ExperienceTechBlock,
+  // JobExperienceWrapper,
+  // JobTechWrapper,
+  // ExperienceTitle,
+  // TechTitleCopy,
+  // ExperienceTitleCopy,
   ExperienceBlockTitles,
-  ConsultingSkillsWrapper,
+  // ConsultingSkillsWrapper,
 } from "../styling/resume_styles";
 
 export default function Resume() {
   return (
     <ResumeGithubBlock>
       <FlexHeader>
-        <h3>Resume</h3>
-        <ResumeLink
+        {/* <h3>Resume</h3> */}
+        {/* <ResumeLink
           href="https://www.dropbox.com/scl/fi/1orkqmx5r22gqnfmdb8o8/efriendly-Vizente-Freeman-v11.pdf?rlkey=66bka9lp2837n5avfn5p3xvtz&dl=0"
           target="_blank"
-        ></ResumeLink>
+        ></ResumeLink> */}
       </FlexHeader>
 
       <ResumeWrapper>
@@ -59,10 +59,10 @@ export default function Resume() {
           </SkillsetWrapper>
         </SkillsetBlock>
         <ExperienceBlock>
-          <ExperienceTitle>
+          {/* <ExperienceTitle>
             <ExperienceTitleCopy>Consulting Experience</ExperienceTitleCopy>
-          </ExperienceTitle>
-          <ConsultingSkillsWrapper>
+          </ExperienceTitle> */}
+          {/* <ConsultingSkillsWrapper>
             {consultingDetails?.jobStops?.length > 0 &&
               consultingDetails.jobStops.map((cjob, j) => (
                 <ExperienceTechBlock key={j}>
@@ -80,17 +80,17 @@ export default function Resume() {
                       {cjob.jobDescription.map((descripts, k) => (
                         <li key={k}>{descripts.jobStopBullet}</li>
                       ))}
-                    </JobDescription> */}
+                    </JobDescription>
                   </JobExperienceWrapper>
                 </ExperienceTechBlock>
               ))}
-          </ConsultingSkillsWrapper>
-          <ExperienceTitleWrapper>
+          </ConsultingSkillsWrapper> */}
+          {/* <ExperienceTitleWrapper>
             <ExperienceTitle>
               <ExperienceTitleCopy>Professional Experience</ExperienceTitleCopy>
             </ExperienceTitle>
-          </ExperienceTitleWrapper>
-          {jobDetails?.jobStops?.length > 0 &&
+          </ExperienceTitleWrapper> */}
+          {/* {jobDetails?.jobStops?.length > 0 &&
             jobDetails.jobStops.map((job, m) => (
               <ExperienceTechBlock key={m}>
                 <JobExperienceWrapper>
@@ -105,7 +105,7 @@ export default function Resume() {
                     {job.jobDescription.map((descripts, q) => (
                       <li key={q}>{descripts.jobStopBullet}</li>
                     ))}
-                  </JobDescription> */}
+                  </JobDescription>
                 </JobExperienceWrapper>
                 <JobTechWrapper>
                   <TechTitleCopy>Technologies</TechTitleCopy>
@@ -116,7 +116,7 @@ export default function Resume() {
                   </ul>
                 </JobTechWrapper>
               </ExperienceTechBlock>
-            ))}
+            ))} */}
         </ExperienceBlock>
 
         <EducationBlock>
