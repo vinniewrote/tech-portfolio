@@ -25,6 +25,16 @@ export default function Highlights() {
         >
           <HighlightButton>ThinkCERCA</HighlightButton>
         </Link>
+        <Link
+          href="https://www.fastmodelsports.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <HighlightButton>FastModel Sports</HighlightButton>
+        </Link>
+        <Link href="https://www.expedia.com/" target="_blank" rel="noreferrer">
+          <HighlightButton>Expedia</HighlightButton>
+        </Link>
       </HighlightWrapper>
 
       <h5>Art/Music</h5>
@@ -37,13 +47,13 @@ export default function Highlights() {
           <HighlightButton>Hebru Brantley</HighlightButton>
         </a>
 
-        <a
+        {/* <a
           href="https://shadesofblueprints.com/products/outkast-2-dope-boyz-in-a-cadillac-giclee-print-1996"
           target="_blank"
           rel="noreferrer"
         >
           <HighlightButton>Outkast Art</HighlightButton>
-        </a>
+        </a> */}
 
         <a
           href="https://www.instagram.com/hiphopheadprints/?igshid=NmZiMzY2Mjc%3D"

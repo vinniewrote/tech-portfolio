@@ -1,5 +1,5 @@
 import React from "react";
-// import { jobDetails } from "../data/resume-details";
+import { jobDetails } from "../data/resume-details";
 // import { consultingDetails } from "../data/resume-consulting";
 import { softSkillsDetails } from "../data/resume-softskills";
 import {
@@ -12,26 +12,29 @@ import {
   SkillsetBlock,
   FlexHeader,
   // ResumeLink,
-  // CompanyName,
-  // JobTitle,
-  // JobTimeRange,
-  // JobDescription,
+  CompanyName,
+  JobTitle,
+  JobTimeRange,
+  JobDescription,
   SoftSkills,
   SoftSkillsWrapper,
   Institution,
   EducationWrapper,
   SkillsetWrapper,
-  // CompanySummary,
-  // CompanyBlock,
-  // CompanyLocation,
-  // ExperienceTitleWrapper,
-  // ExperienceTechBlock,
-  // JobExperienceWrapper,
-  // JobTechWrapper,
-  // ExperienceTitle,
-  // TechTitleCopy,
-  // ExperienceTitleCopy,
+  CompanySummary,
+  CompanyBlock,
+  CompanyLocation,
+  ExperienceTitleWrapper,
+  ExperienceTechBlock,
+  JobExperienceWrapper,
+  JobTechWrapper,
+  ExperienceTitle,
+  TechTitleCopy,
+  ExperienceTitleCopy,
   ExperienceBlockTitles,
+  SummaryBlock,
+  SummaryCopy,
+  CompetenciesBlock,
   // ConsultingSkillsWrapper,
 } from "../styling/resume_styles";
 
@@ -39,7 +42,7 @@ export default function Resume() {
   return (
     <ResumeGithubBlock>
       <FlexHeader>
-        {/* <h3>Resume</h3> */}
+        <h3>Resume</h3>
         {/* <ResumeLink
           href="https://www.dropbox.com/scl/fi/1orkqmx5r22gqnfmdb8o8/efriendly-Vizente-Freeman-v11.pdf?rlkey=66bka9lp2837n5avfn5p3xvtz&dl=0"
           target="_blank"
@@ -47,6 +50,50 @@ export default function Resume() {
       </FlexHeader>
 
       <ResumeWrapper>
+        <SummaryBlock>
+          <ExperienceBlockTitles>Professional Summary</ExperienceBlockTitles>
+          <SummaryCopy>
+            Web development and technology delivery leader with 10+ years of
+            experience designing, developing, and implementing web applications
+            and digital platforms. Proven track record coordinating developers,
+            designers, and cross-functional teams to deliver high-quality,
+            user-facing systems. Experienced defining project scope, guiding
+            technical implementation, managing resources, and ensuring quality
+            across complex web initiatives. Adept at translating business needs
+            into scalable digital solutions while maintaining clear
+            communication with stakeholders and leadership.
+          </SummaryCopy>
+        </SummaryBlock>
+        <CompetenciesBlock>
+          <ExperienceBlockTitles>Core Competencies</ExperienceBlockTitles>
+          <ul>
+            <li>
+              Web Development Leadership: Website architecture • Web application
+              development • Mobile/web interface coordination • User-facing
+              system delivery • Development lifecycle leadership
+            </li>
+            <li>
+              Project & Resource Management: Project scope definition • Resource
+              planning • Delivery scheduling • Risk & issue management •
+              Milestone tracking
+            </li>
+            <li>
+              Technical Leadership: Technical guidance for development teams •
+              Quality assurance oversight • System integration coordination •
+              Performance monitoring
+            </li>
+            <li>
+              Cross-Team Coordination: Vendor coordination • Stakeholder
+              communication • Business requirements translation • Agile and
+              hybrid development practices
+            </li>
+            <li>
+              Tools: JIRA • Confluence • Web application frameworks •
+              Documentation and reporting tools • Agile methodologies
+            </li>
+          </ul>
+        </CompetenciesBlock>
+
         <SkillsetBlock>
           <ExperienceBlockTitles>Areas of Expertise</ExperienceBlockTitles>
           <SkillsetWrapper>
@@ -76,7 +123,7 @@ export default function Resume() {
                       <CompanyLocation>{cjob.companyLocation}</CompanyLocation>
                     </CompanyBlock>
 
-                    {/* <JobDescription>
+                    <JobDescription>
                       {cjob.jobDescription.map((descripts, k) => (
                         <li key={k}>{descripts.jobStopBullet}</li>
                       ))}
@@ -85,12 +132,12 @@ export default function Resume() {
                 </ExperienceTechBlock>
               ))}
           </ConsultingSkillsWrapper> */}
-          {/* <ExperienceTitleWrapper>
+          <ExperienceTitleWrapper>
             <ExperienceTitle>
               <ExperienceTitleCopy>Professional Experience</ExperienceTitleCopy>
             </ExperienceTitle>
-          </ExperienceTitleWrapper> */}
-          {/* {jobDetails?.jobStops?.length > 0 &&
+          </ExperienceTitleWrapper>
+          {jobDetails?.jobStops?.length > 0 &&
             jobDetails.jobStops.map((job, m) => (
               <ExperienceTechBlock key={m}>
                 <JobExperienceWrapper>
@@ -101,7 +148,7 @@ export default function Resume() {
                     <CompanyLocation>{job.companyLocation}</CompanyLocation>
                   </CompanyBlock>
                   <CompanySummary>{job.companySummary}</CompanySummary>
-                  {/* <JobDescription>
+                  <JobDescription>
                     {job.jobDescription.map((descripts, q) => (
                       <li key={q}>{descripts.jobStopBullet}</li>
                     ))}
@@ -116,7 +163,7 @@ export default function Resume() {
                   </ul>
                 </JobTechWrapper>
               </ExperienceTechBlock>
-            ))} */}
+            ))}
         </ExperienceBlock>
 
         <EducationBlock>
