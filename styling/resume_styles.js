@@ -52,6 +52,44 @@ export const SummaryBlock = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const CompetenciesBlock = styled.div`
+  & h4 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #c29f00;
+    margin: 0;
+  }
+  & p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 1em; //16px
+    line-height: 1.5em;
+  }
+  & ul {
+    margin: 0;
+    & li {
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 1em; //16px
+      line-height: 1.5em;
+    }
+    & li:first-child {
+      margin-top: 0.5em;
+    }
+  }
+  display: flex;
+  flex-direction: column;
+`;
+export const SummaryCopy = styled.p`
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+`;
+
 export const CompanySummary = styled.h5`
   font-family: "Raleway", sans-serif;
   font-size: 1em;

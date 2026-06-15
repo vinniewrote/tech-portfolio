@@ -18,8 +18,9 @@ export default function Home() {
           <PastWork />
           <Highlights />
         </MasonryBlock>
-        <SpeakingPresentations />
+
         <Resume />
+        <SpeakingPresentations />
         <Footer />
       </BodyContainer>
     </div>

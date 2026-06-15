@@ -197,7 +197,14 @@ export const HighlightWrapper = styled.div`
   margin: 0 0 20px 0;
 
   @media screen and (max-width: 1200px) {
-    justify-content: space-evenly;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1200px) {
+    justify-content: center;
+
+    & a {
+      margin-right: 20px;
+    }
   }
 `;
 
